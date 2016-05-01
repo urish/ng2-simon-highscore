@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Score</th>
+  </tr>
+  <tr *ngFor="#entry of entries|async; #rank = index">
+    <td>{{rank + 1}}</td>
+    <td>{{entry.name}}</td>
+    <td>{{entry.score}}</td>
+  </tr>
+</table>
