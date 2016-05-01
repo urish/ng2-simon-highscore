@@ -1,8 +1,8 @@
 <table>
   <tr>
-    <th>Rank</th>
-    <th>Name</th>
-    <th>Score</th>
+    <th width="100">Rank</th>
+    <th width="*">Name</th>
+    <th width="100">Score</th>
   </tr>
   <tr *ngFor="#entry of entries|async; #rank = index">
     <td>{{rank + 1}}</td>
