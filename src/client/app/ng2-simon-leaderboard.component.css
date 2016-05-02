@@ -1,4 +1,48 @@
 div.pixelated-logos {
   margin-top: 2pc;
   image-rendering: pixelated;
+  background: rgba(207,12,201,1);
+  padding: 5px;
+	background: -moz-linear-gradient(left, rgba(207,12,201,1) 0%, rgba(245,245,8,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(207,12,201,1)), color-stop(100%, rgba(245,245,8,1)));
+	background: -webkit-linear-gradient(left, rgba(207,12,201,1) 0%, rgba(245,245,8,1) 100%);
+	background: -o-linear-gradient(left, rgba(207,12,201,1) 0%, rgba(245,245,8,1) 100%);
+	background: -ms-linear-gradient(left, rgba(207,12,201,1) 0%, rgba(245,245,8,1) 100%);
+	background: linear-gradient(to right, rgba(207,12,201,1) 0%, rgba(245,245,8,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf0cc9', endColorstr='#f5f508', GradientType=1 );
+}
+
+
+@keyframes right2left {
+  0% {
+    transform: translate3d(500px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(500px, 0px, 0px);
+  }
+}
+
+@keyframes left2right {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(500px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+#logo1 {
+   animation: right2left 12s infinite;
+   animation-fill-mode: forwards;
+}
+
+#logo2 {
+   animation: left2right 12s infinite;
+   animation-fill-mode: forwards;
 }
