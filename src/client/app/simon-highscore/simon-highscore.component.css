@@ -1,3 +1,7 @@
-p {
-  color: red;
+table {
+  font-size: 30px;
+}
+
+th {
+  text-align: left;
 }
