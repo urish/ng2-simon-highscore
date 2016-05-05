@@ -1,8 +1,22 @@
-<h1>
-  Hall Of Fame
-</h1>
+<simon-highscore *ngIf="!gameState?.playing"></simon-highscore>
 
-<simon-highscore></simon-highscore>
+<div *ngIf="gameState?.playing" class="fullscreen {{gameState?.gameColor}}">
+
+  <div>
+    <h1 class="welcome-text">Welcome to the {{gameState?.gameColor}} team!</h1>
+    <p>
+      Reproduce the sequence to win!
+    </p>
+  </div>
+
+</div>
+
+<div *ngIf="gameState?.score > 0 && gameState?.playing" class="fullscreen {{gameState?.lastColor}}">
+
+  <div class="sayings-sprite sprite{{spriteNumber}}">
+  </div>
+
+</div>
 
 <footer>
   <img src="assets/images/logo-github.png" alt="">
