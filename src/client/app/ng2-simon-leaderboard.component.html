@@ -2,11 +2,9 @@
   Hall Of Fame
 </h1>
 
-<simon-highscore></simon-highscore>
-
-<div class="pixelated-logos">
-  <img src="assets/images/angular2.png" width="120" id="logo1">
-  <img src="assets/images/ngconf.png" width="130" id="logo2">
-</div>
+<simon-highscore *ngIf="!gameState?.playing"></simon-highscore>
+<p *ngIf="gameState?.playing">
+Welcome to the {{gameState?.gameColor}} team!
+</p>
 
 <router-outlet></router-outlet>

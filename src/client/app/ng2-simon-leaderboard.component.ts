@@ -1,6 +1,17 @@
-import {Component} from 'angular2/core';
+import {Component, Inject} from 'angular2/core';
+import {Observable} from 'rxjs/Observable';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {SimonHighscoreComponent} from './simon-highscore';
+import {AngularFire, FirebaseUrl} from 'angularfire2';
+
+// switch this to 'iot' to run against the IoT version
+const FIREBASE_PREFIX = 'web';
+
+interface ISimonGameInfo {
+  playing: boolean;
+  score: number;
+  gameColor: string;
+}
 
 @Component({
   moduleId: __moduleName,
@@ -8,15 +19,17 @@ import {SimonHighscoreComponent} from './simon-highscore';
   providers: [ROUTER_PROVIDERS],
   templateUrl: 'ng2-simon-leaderboard.component.html',
   styleUrls: ['ng2-simon-leaderboard.component.css'],
-  directives: [ROUTER_DIRECTIVES, SimonHighscoreComponent],
-  pipes: []
+  directives: [ROUTER_DIRECTIVES, SimonHighscoreComponent]
 })
 @RouteConfig([
 ])
 export class Ng2SimonLeaderboardApp {
-  defaultMeaning: number = 42;
+  private gameState: ISimonGameInfo;
 
-  meaningOfLife(meaning?: number) {
-    return `The meaning of life is ${meaning || this.defaultMeaning}`;
+  constructor(af: AngularFire, @Inject(FirebaseUrl) fbUrl: string) {
+    af.database.object(`/${FIREBASE_PREFIX}/gameState`).subscribe(gameState => {
+      console.log('game state', gameState);
+      this.gameState = gameState;
+    });
   }
 }
