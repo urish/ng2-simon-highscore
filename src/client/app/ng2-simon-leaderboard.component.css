@@ -20,6 +20,7 @@
 
 .fullscreen.yellow {
   background-color: yellow;
+  color: black;
 }
 
 .fullscreen.blue {
@@ -37,28 +38,24 @@
   background-position: 0 0;
 }
 
-.sayings-sprite.sprite1 {
+.sayings-sprite.sprite2 {
   background-position: -400px 0;
 }
 
-.sayings-sprite.sprite2 {
+.sayings-sprite.sprite3 {
   background-position: -800px 0;
 }
 
-.sayings-sprite.sprite3 {
+.sayings-sprite.sprite4 {
   background-position: -1200px 0;
 }
 
-.sayings-sprite.sprite4 {
+.sayings-sprite.sprite5 {
   background-position: -1600px 0;
 }
 
-.sayings-sprite.sprite5 {
-  background-position: -2000px 0;
-}
-
 .sayings-sprite.sprite6 {
-  background-position: -2400px 0;
+  background-position: -2000px 0;
 }
 
 footer {

@@ -3,7 +3,7 @@
 <div *ngIf="gameState?.playing" class="fullscreen {{gameState?.gameColor}}">
 
   <div>
-    <h1 class="welcome-text">Welcome to the {{gameState?.gameColor}} team!</h1>
+    <h1>Welcome to the {{gameState?.gameColor}} team!</h1>
     <p>
       Reproduce the sequence to win!
     </p>
@@ -14,6 +14,14 @@
 <div *ngIf="gameState?.score > 0 && gameState?.playing" class="fullscreen {{gameState?.lastColor}}">
 
   <div class="sayings-sprite sprite{{spriteNumber}}">
+  </div>
+
+</div>
+
+<div *ngIf="gameState?.gameOver" class="fullscreen {{gameState?.gameColor}}">
+
+  <div>
+    <h1>Try one more time</h1>
   </div>
 
 </div>

@@ -33,9 +33,8 @@ export class Ng2SimonLeaderboardApp {
 
   constructor(af: AngularFire, @Inject(FirebaseUrl) fbUrl: string) {
     af.database.object(`/${FIREBASE_PREFIX}/gameState`).subscribe(gameState => {
-      console.log('game state', gameState);
+      this.generateSpriteNumber();
       this.gameState = gameState;
     });
-    this.generateSpriteNumber();
   }
 }
