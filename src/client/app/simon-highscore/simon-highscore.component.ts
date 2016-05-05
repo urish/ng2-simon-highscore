@@ -1,6 +1,5 @@
-import {Component, OnInit, Inject} from 'angular2/core';
+import {Component, Input, OnInit} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
-import {AngularFire, FirebaseUrl} from 'angularfire2';
 
 @Component({
   moduleId: __moduleName,
@@ -9,14 +8,18 @@ import {AngularFire, FirebaseUrl} from 'angularfire2';
   styleUrls: ['simon-highscore.component.css']
 })
 export class SimonHighscoreComponent implements OnInit {
-  entries: Observable<any[]>;
-
-  constructor(af: AngularFire, @Inject(FirebaseUrl) fbUrl: string) {
-    let fbRef = new Firebase(fbUrl).child('leaderboard');
-    this.entries = af.database.list(fbRef as Firebase);
-  }
+  @Input() games: Observable<ISimonScoreInfo[]>;
+  private highscore: number;
 
   ngOnInit() {
+    this.games.subscribe(games => {
+      this.highscore = 0;
+      games.forEach(game => {
+        if (game.score > this.highscore) {
+          this.highscore = game.score;
+        }
+      });
+    });
   }
 
 }

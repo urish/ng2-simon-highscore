@@ -1,7 +1,3 @@
-table {
-  font-size: 30px;
-}
-
-th {
-  text-align: left;
+div[content] {
+  padding: 1pc;
 }

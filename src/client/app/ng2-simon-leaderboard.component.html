@@ -1,4 +1,4 @@
-<simon-highscore *ngIf="!gameState?.playing"></simon-highscore>
+<simon-highscore *ngIf="!gameState?.playing" [games]="games"></simon-highscore>
 
 <div *ngIf="gameState?.playing" class="fullscreen {{gameState?.gameColor}}">
 

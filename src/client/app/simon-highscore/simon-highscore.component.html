@@ -1,16 +1,7 @@
-<h1>
-  Hall Of Fame
-</h1>
+<div content>
+  <h1>
+    ng2-simon
+  </h1>
 
-<table>
-  <tr>
-    <th width="200">Rank</th>
-    <th width="300">Name</th>
-    <th width="200">Score</th>
-  </tr>
-  <tr *ngFor="#entry of entries|async; #rank = index">
-    <td>{{rank + 1}}</td>
-    <td>{{entry.name}}</td>
-    <td>{{entry.score}}</td>
-  </tr>
-</table>
+  High score: {{highscore}}
+</div>
