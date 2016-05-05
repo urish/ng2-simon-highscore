@@ -1,10 +1,34 @@
-<h1>
-  Hall Of Fame
-</h1>
-
 <simon-highscore *ngIf="!gameState?.playing"></simon-highscore>
-<p *ngIf="gameState?.playing">
-Welcome to the {{gameState?.gameColor}} team!
-</p>
 
-<router-outlet></router-outlet>
+<div *ngIf="gameState?.playing" class="fullscreen {{gameState?.gameColor}}">
+
+  <div>
+    <h1>Welcome to the {{gameState?.gameColor}} team!</h1>
+    <p>
+      Reproduce the sequence to win!
+    </p>
+  </div>
+
+</div>
+
+<div *ngIf="gameState?.score > 0 && gameState?.playing" class="fullscreen {{gameState?.lastColor}}">
+
+  <div class="sayings-sprite sprite{{spriteNumber}}">
+  </div>
+
+</div>
+
+<div *ngIf="gameState?.gameOver" class="fullscreen {{gameState?.gameColor}}">
+
+  <div>
+    <h1>Try one more time</h1>
+  </div>
+
+</div>
+
+<footer>
+  <img src="assets/images/logo-github.png" alt="">
+  <div>
+  &nbsp;github.com/urish/ng2-simon
+  </div>
+</footer>

@@ -27,10 +27,15 @@ interface ISimonGameInfo {
 ])
 export class Ng2SimonLeaderboardApp {
   private gameState: ISimonGameInfo;
+  spriteNumber: any;
+
+  generateSpriteNumber() {
+        this.spriteNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+  }
 
   constructor(af: AngularFire, @Inject(FirebaseUrl) fbUrl: string) {
     af.database.object(`/${FIREBASE_PREFIX}/gameState`).subscribe(gameState => {
-      console.log('game state', gameState);
+      this.generateSpriteNumber();
       this.gameState = gameState;
     });
   }
