@@ -67,6 +67,21 @@
       font-size: 40px;
     }
 
+    .blink {
+      animation: blink-animation 2s steps(2, start) infinite;
+      -webkit-animation: blink-animation 2s steps(2, start) infinite;
+    }
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+    @-webkit-keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+
     .fullscreen {
       top: 0;
       left: 0;
