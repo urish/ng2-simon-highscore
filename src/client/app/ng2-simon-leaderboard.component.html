@@ -1,11 +1,17 @@
-<simon-highscore *ngIf="!gameState?.playing" [games]="games"></simon-highscore>
+<div *ngIf="!gameState?.playing">
+
+  <simon-highscore [games]="games"></simon-highscore>
+
+</div>
 
 <div *ngIf="gameState?.playing" class="fullscreen {{gameState?.gameColor}}">
 
   <div>
-    <h1>Welcome to the {{gameState?.gameColor}} team!</h1>
+    <h1>Welcome to the
+      {{gameState?.gameColor}}
+      team!</h1>
     <p>
-      Reproduce the sequence to win!
+      Repeat the sequence after me
     </p>
   </div>
 
@@ -13,22 +19,19 @@
 
 <div *ngIf="gameState?.score > 0 && gameState?.playing" class="fullscreen {{gameState?.lastColor}}">
 
-  <div class="sayings-sprite sprite{{spriteNumber}}">
-  </div>
+  <div class="sayings-sprite sprite{{spriteNumber}}"></div>
 
 </div>
 
 <div *ngIf="gameState?.gameOver" class="fullscreen {{gameState?.gameColor}}">
 
-  <div>
-    <h1>Try one more time</h1>
+  <div class="message">
+    <h1>Game over</h1>
+    <p>Play again</p>
   </div>
 
 </div>
 
 <footer>
-  <img src="assets/images/logo-github.png" alt="">
-  <div>
-  &nbsp;github.com/urish/ng2-simon
-  </div>
+  github.com/urish/ng2-simon
 </footer>

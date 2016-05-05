@@ -1,32 +1,3 @@
-.fullscreen {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.fullscreen.green {
-  background-color: green;
-}
-
-.fullscreen.red {
-  background-color: red;
-}
-
-.fullscreen.yellow {
-  background-color: yellow;
-  color: black;
-}
-
-.fullscreen.blue {
-  background-color: blue;
-}
-
 .sayings-sprite {
   width: 400px;
   height: 400px;
@@ -70,8 +41,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-footer img {
-  height: 30px;
+  font-size: 20px;
 }

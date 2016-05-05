@@ -1,7 +1,31 @@
-<div content>
-  <h1>
-    ng2-simon
-  </h1>
+<div class="fullscreen">
 
-  High score: {{highscore}}
+  <div class="quadrant {{color}}" *ngFor="#color of gameColors">
+
+    <div>
+      <h2>Team
+        {{color}}</h2>
+
+      <p>
+        Top result:
+        {{gameMetrics[color]?.high}}</p>
+      <p>Average:
+        {{gameMetrics[color]?.avg}}</p>
+      <p>Total:
+        {{gameMetrics[color]?.sum}}</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="fullscreen">
+
+  <div class="message">
+
+    <p>Choose your team (check the sticker on your badge)</p>
+
+  </div>
+
 </div>
