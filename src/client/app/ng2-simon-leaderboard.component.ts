@@ -1,5 +1,4 @@
 import {Component, Inject} from 'angular2/core';
-import {Observable} from 'rxjs/Observable';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {SimonHighscoreComponent} from './simon-highscore';
 import {AngularFire, FirebaseUrl} from 'angularfire2';
