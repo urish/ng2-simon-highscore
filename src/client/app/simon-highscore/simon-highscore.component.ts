@@ -12,7 +12,7 @@ export class SimonHighscoreComponent implements OnInit {
   @Input() games: Observable<ISimonScoreInfo[]>;
   private highscore: number;
   private gameMetrics = {};
-  private gameColors: string[] = ['red', 'green', 'blue', 'yellow'];
+  private gameColors: string[] = ['green', 'red', 'blue', 'yellow'];
 
   generateTeamsMetrics(games) {
     for (let color of this.gameColors) {
